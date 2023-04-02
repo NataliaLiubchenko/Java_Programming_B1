@@ -29,7 +29,7 @@ public class ChooseLanguage {
         } else if (languageNum == 6) {
             message = "Tez de gorum. Konturum qurtardi";
         } else {
-            message = "Invalid input";
+            message= "Invalid input";
         }
 
         System.out.println(message);
