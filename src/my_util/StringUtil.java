@@ -31,8 +31,62 @@ public static String reverseStr (String str) {
         return fixed;
     }
 
+    /**
+    This method will accept a String with multiple words
+     And convert to camelCase String
+     */
+   public static String camelCase (String str){
+       String [] arr = str.split(" ");
+       String result="";
+       for (String each:arr) {
+           result+=(each.charAt(0)+"").toUpperCase()+each.substring(1).toLowerCase();
+
+       }
+       return  (result.charAt(0)+"").toLowerCase()+result.substring(1);
 
 
+
+   }
+    /**
+     * This method accepts String and a Char
+     * And returns how many times that char exists in the String
+     * Input:
+     *      apple, z
+     * Output:
+     *      0
+     */
+    public static int frequencyOfCharacter(String str, char ch){
+        int count = 0;
+        for (int i = 0; i <str.length() ; i++) {
+            if (str.charAt(i) == ch){
+                count++;
+            }
+
+        }
+        return count;
+    }
+
+    /**
+     * This method accepts String
+     * And returns only unique characters as a String
+     *
+     */
+    public static String uniqueCharacters(String str) {
+        String checked = "";
+        String unique = "";
+
+        for (int i = 0; i < str.length(); i++) {
+            if (!checked.contains(str.charAt(i) + "")) {
+                int count = StringUtil.frequencyOfCharacter(str, str.charAt(i));
+                checked += str.charAt(i);
+                if (count == 1) {
+                    unique += str.charAt(i);
+                }
+            }
+
+        }
+        return unique;
+    }
 
 
 
