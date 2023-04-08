@@ -96,6 +96,32 @@ public class ArrayUtil {
 
     }
 
+    /**
+     * This method accepts int number and int array
+     * And returns the new array with new number added at the beginning
+     */
+    public static int [] addElementBeginning(int num, int ... arr){ //{1, 4, 8}
+        int [] newArr = new int[arr.length+1];
+        for (int i = 1; i < newArr.length; i++) {
+            newArr[i] +=arr[i-1];
+        }
+        newArr[0]=num;
+        return newArr;
+    }
+    /**
+     * This method accepts String word and String array
+     * And returns the new array with new word added at the beginning
+     */
+    public static String [] addElementBeginning(String word, String[]arr){ //{1, 4, 8}
+        String [] newArr = new String[arr.length+1];
+        for (int i = 1; i < newArr.length; i++) {
+            newArr[i] = arr[i-1];
+        }
+        newArr[0]=word;
+        return newArr;
+    }
+
+
 
 }
 
